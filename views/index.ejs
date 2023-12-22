@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL - Shortener</title>
+  </head>
+  <body>
+    <h1>URL - Shortener</h1>
+    <form action="/shortUrls" method="post">
+      <input type="url" name="full" placeholder="Paste URL here" />
+      <button>Click</button>
+      <br />
+      <br />
+      <% shortLink.forEach(element => { %>
+      <a href="<%= element.shortLink %>"><%= element.shortLink %> <br /></a>
+      <% }) %>
+    </form>
+  </body>
+</html>
