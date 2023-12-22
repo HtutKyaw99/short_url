@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require("path");
 
 const ShortURL = require("./models/ShortURL");
 
@@ -9,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
-app.set("views", "./views");
+app.set("views", path.join(__dirname, "./views"));
 
 mongoose.connect("mongodb://localhost:27017/shortURL", {
   useNewUrlParser: true,
